@@ -1,4 +1,4 @@
-# Prison Sentence Estimator WebApp
+# Prison Sentence Estimator WebApp (WIP)
 
 This will be a webapp to automate some of the calculations and scoring AL legal offices have to perform to estimate the sentencing of a particular offender. 
 These can be found here: https://sentencingcommission.alacourt.gov/sentencing-standards/
