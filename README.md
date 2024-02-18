@@ -1,8 +1,9 @@
-# React + Vite
+# Prison Sentence Estimator WebApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This will be a webapp to automate some of the calculations and scoring AL legal offices have to perform to estimate the sentencing of a particular offender. I've agreed to take this project on after being asked by a friend's legal office.
 
-Currently, two official plugins are available:
+This project is currently in the planning stage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm familiar with how to build website/webapps from previous projects and education using HTML, CSS, JavaScript, & PHP. But I feel it would be a good learning experience to build something in a modern framework. Especially, since I would like to start deploying ML models on the web in the future.
+
+I will be leveraging React + Vite. Currently just standard CSS for styling. Perhaps a shift to Tailwind later. I don't believe a database will be necessary for this project (maybe for a login system). However, I'd like to learn a bit about Firebase. So I'll probably leverage that if the need arises.
