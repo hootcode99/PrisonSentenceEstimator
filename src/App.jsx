@@ -1,33 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './styles/App.css'
+import { Route, Routes } from 'react-router-dom'
+
+import Navbar from './components/Navbar'
+
+import DrugWorksheetABC_InOut from './pages/DrugWorksheetABC_InOut'
+import DrugWorksheetABC_SentenceLength from './pages/DrugWorksheetABC_SentenceLength'
+import DrugWorksheetD_InOut from './pages/DrugWorksheetD_InOut'
+import DrugWorksheetD_SentenceLength from './pages/DrugWorksheetD_SentenceLength'
+
+import PropertyWorksheetABC_InOut from './pages/PropertyWorksheetABC_InOut'
+import PropertyWorksheetABC_SentenceLength from './pages/PropertyWorksheetABC_SentenceLength'
+import PropertyWorksheetD_InOut from './pages/PropertyWorksheetD_InOut'
+import PropertyWorksheetD_SentenceLength from './pages/PropertyWorksheetD_SentenceLength'
+
+import PersonalWorksheet_InOut from './pages/PersonalWorksheet_InOut'
+import PersonalWorksheet_SentenceLength from './pages/PersonalWorksheet_SentenceLength'
+
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <Routes>
+        <Route path='/DrugWorksheetABC_InOut' element={<DrugWorksheetABC_InOut />} />
+        <Route path='/DrugWorksheetABC_SentenceLength' element={<DrugWorksheetABC_SentenceLength />} />
+        <Route path='/DrugWorksheetD_InOut' element={<DrugWorksheetD_InOut />} />
+        <Route path='/DrugWorksheetD_SentenceLength' element={<DrugWorksheetD_SentenceLength />} />
+
+        <Route path='/PropertyWorksheetABC_InOut' element={<PropertyWorksheetABC_InOut />} />
+        <Route path='/PropertyWorksheetABC_SentenceLength' element={<PropertyWorksheetABC_SentenceLength />} />
+        <Route path='/PropertyWorksheetD_InOut' element={<PropertyWorksheetD_InOut />} />
+        <Route path='/PropertyWorksheetD_SentenceLength' element={<PropertyWorksheetD_SentenceLength />} />
+
+        <Route path='/PersonalWorksheet_InOut' element={<PersonalWorksheet_InOut />} />
+        <Route path='/PersonalWorksheet_SentenceLength' element={<PersonalWorksheet_SentenceLength />} />
+        
+      </Routes>
     </>
   )
 }
