@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 import DrugWorksheetABC_InOut from './pages/DrugWorksheetABC_InOut'
 import DrugWorksheetABC_SentenceLength from './pages/DrugWorksheetABC_SentenceLength'
@@ -36,6 +37,7 @@ function App() {
         <Route path='/PersonalWorksheet_SentenceLength' element={<PersonalWorksheet_SentenceLength />} />
         
       </Routes>
+      <Footer />
     </>
   )
 }
