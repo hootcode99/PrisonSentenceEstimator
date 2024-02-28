@@ -47,14 +47,14 @@ export function SectionHeader(props){
 export function Divider(props) {
     if (props.modifier === "top"){
         return (            
-        <div class="justify-center items-center w-4/5">
+        <div className="justify-center items-center w-4/5">
             <div className="divider divider-info"></div>
         </div>
         )
 
     } else if (props.modifier === "bottom") {
         return (            
-        <div class="justify-center items-center w-4/5">
+        <div className="justify-center items-center w-4/5">
             <div className="divider divider-info"></div>
         </div>
         )
@@ -66,7 +66,7 @@ export function Divider(props) {
 
     } else {
         return (
-            <div class="justify-center items-center w-4/5">
+            <div className="justify-center items-center w-4/5">
                 <div className="divider divider-neutral"></div>
             </div>
         )

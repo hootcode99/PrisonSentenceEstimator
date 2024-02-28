@@ -59,7 +59,7 @@ export default function DrugWorksheetABC_InOut() {
 
     return (
         <>
-        <div className="grid h-20 card bg-base-300 place-items-center text-4xl font-bold">Drug Offense In/Out Worksheet - Class A/B/C</div>
+        
         <div className="flex flex-col w-full place-items-center">
 
             <Divider modifier="top" />
@@ -82,7 +82,7 @@ export default function DrugWorksheetABC_InOut() {
                     <Divider modifier="horizontal"/>
 
                 <StackingDiv>
-                    <SectionHeader mod="half" title="Prior Adult Convictions for Misdemeanors or Violations" score={priorAdultMisdemeanorConvs} subtext="" />
+                    <SectionHeader mod="half" title="Prior Adult Convictions for Misdemeanors/Violations" score={priorAdultMisdemeanorConvs} subtext="" />
                     <div className='flex mt-4'>
                         <RadioSectionWrapper>
                             <RadioSection title="Select" options={misdemeanorOptions} update_fn={setPriorAdultMisdemeanorConvs} group="misdemeanor-group" />
@@ -104,7 +104,7 @@ export default function DrugWorksheetABC_InOut() {
                 <Divider modifier="horizontal" />
 
                 <StackingDiv>
-                    <SectionHeader mod="half" title="Prior Felony Probation or Parole Revocation" score={priorParoleViolation} subtext="" />
+                    <SectionHeader mod="half" title="Prior Felony Probation/Parole Revocation" score={priorParoleViolation} subtext="" />
                     <RadioSectionWrapper>
                         <RadioSection title="Select" options={priorParoleViolationOptions} update_fn={setPriorParoleViolation} group="prior-felony" />
                     </RadioSectionWrapper>
@@ -115,14 +115,14 @@ export default function DrugWorksheetABC_InOut() {
 
             <TwoColumnWrapper>
                 <StackingDiv>
-                    <SectionHeader mod="half" title="Prior Juvenile Delinquency or YO Adjudications" score={PriorJuvenileFelonyAdj} subtext="(Violation/Misdemeanor/Felony)" />
+                    <SectionHeader mod="half" title="Prior Juvenile Delinquency/YO Adjudications" score={PriorJuvenileFelonyAdj} subtext="(Violation/Misdemeanor/Felony)" />
                     <RadioSectionWrapper>
                         <RadioSection options={priorJuvenileOptions} update_fn={setPriorJuvenileFelonyAdj} group="prior-juvenile" />
                     </RadioSectionWrapper>
                 </StackingDiv>
                 <Divider modifier="horizontal" />
                 <StackingDiv>
-                    <SectionHeader mod="half" title="Possession/Use of a Deadly Weapon or Dangerous Instrument" score={useDeadlyWeapon} subtext="" />
+                    <SectionHeader mod="half" title="Poss./Use of a Deadly Weapon or Dangerous Instrument" score={useDeadlyWeapon} subtext="" />
                     <RadioSectionWrapper>
                         <RadioSection options={deadlyWeaponOptions} update_fn={setUseDeadlyWeapon} group="use-weapon" />
                     </RadioSectionWrapper>
