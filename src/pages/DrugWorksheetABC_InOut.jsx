@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RadioSection, RadioButtonChecked, RadioButtonUnchecked, RadioSectionDropdown } from '../components/RadioItems';
-import { SectionHeader } from '../components/PageSectionItems';
+import { SectionHeader, Divider, TwoColumnWrapper, RadioSectionWrapper, StackingDiv } from '../components/PageSectionItems';
 import { SliderBar } from '../components/SliderItems';
 
 const classOptions =  {
@@ -59,11 +59,11 @@ export default function DrugWorksheetABC_InOut() {
 
     return (
         <>
-        <div className="grid h-20 card bg-base-300 place-items-center text-4xl">Drug Offense In/Out Worksheet - Class A/B/C</div>
+        <div className="grid h-20 card bg-base-300 place-items-center text-4xl font-bold">Drug Offense In/Out Worksheet - Class A/B/C</div>
         <div className="flex flex-col w-full place-items-center">
 
-            <div className="divider divider-accent"></div> 
-
+            <Divider modifier="top" />
+            
             <SectionHeader title="Most Serious Conviction Offense" score={mostSeriousConv} subtext="" />
             <div className="flex flex-col w-4/5">
                 <RadioSectionDropdown title="Class A" options={classOptions.A} update_fn={setMostSeriousConv} group="most-serious-offense" />
@@ -71,50 +71,67 @@ export default function DrugWorksheetABC_InOut() {
                 <RadioSectionDropdown title="Class C" options={classOptions.C} update_fn={setMostSeriousConv} group="most-serious-offense" />
             </div>
 
-            <div className="divider divider-neutral"></div> 
+            <Divider />
 
-            <SectionHeader title="Prior Adult Felony Convictions" score={priorAdultFelonyConvs} subtext="" />
-            <SliderBar value={priorAdultFelonyConvs} update_fn={setPriorAdultFelonyConvs}/>
+            <TwoColumnWrapper>
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Prior Adult Felony Convictions" score={priorAdultFelonyConvs} subtext="" />
+                    <SliderBar column="true" value={priorAdultFelonyConvs} update_fn={setPriorAdultFelonyConvs}/>
+                </StackingDiv>
 
-            <div className="divider divider-neutral"></div>
+                    <Divider modifier="horizontal"/>
 
-            <SectionHeader title="Prior Adult Convictions for Misdemeanors or Violations" score={priorAdultMisdemeanorConvs} subtext="" />
-            <div className="flex justify-center space-x-10 w-4/5">
-                <RadioSection title="Select" options={misdemeanorOptions} update_fn={setPriorAdultMisdemeanorConvs} group="misdemeanor-group" />
-            </div>
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Prior Adult Convictions for Misdemeanors or Violations" score={priorAdultMisdemeanorConvs} subtext="" />
+                    <div className='flex mt-4'>
+                        <RadioSectionWrapper>
+                            <RadioSection title="Select" options={misdemeanorOptions} update_fn={setPriorAdultMisdemeanorConvs} group="misdemeanor-group" />
+                        </RadioSectionWrapper>
+                    </div>
+                </StackingDiv>
+            </TwoColumnWrapper>
 
-            <div className="divider divider-neutral"></div>
+            <Divider />
 
-            <SectionHeader title="Prior Incarceration w/Unsuspended Sentence" score={priorIncarceration} subtext="" />
-            <div className="flex justify-center space-x-10 w-4/5">
-                <RadioSection title="Select" options={priorIncarcerationOptions} update_fn={setPriorIncarceration} group="prior-incarceration" />
-            </div>
+            <TwoColumnWrapper>
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Prior Incarceration w/Unsuspended Sentence" score={priorIncarceration} subtext="" />
+                    <RadioSectionWrapper>
+                        <RadioSection title="Select" options={priorIncarcerationOptions} update_fn={setPriorIncarceration} group="prior-incarceration" />
+                    </RadioSectionWrapper>
+                </StackingDiv>
 
-            <div className="divider divider-neutral"></div>
+                <Divider modifier="horizontal" />
 
-            <SectionHeader title="Prior Felony Probation or Parole Revocation" score={priorParoleViolation} subtext="" />
-            <div className="flex justify-center space-x-10 w-4/5">
-                <RadioSection title="Select" options={priorParoleViolationOptions} update_fn={setPriorParoleViolation} group="prior-felony" />
-            </div>
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Prior Felony Probation or Parole Revocation" score={priorParoleViolation} subtext="" />
+                    <RadioSectionWrapper>
+                        <RadioSection title="Select" options={priorParoleViolationOptions} update_fn={setPriorParoleViolation} group="prior-felony" />
+                    </RadioSectionWrapper>
+                </StackingDiv>
+            </TwoColumnWrapper>
 
-            <div className="divider divider-neutral"></div>
+            <Divider />
 
-            <SectionHeader title="Prior Juvenile Delinquency or YO Adjudications" score={PriorJuvenileFelonyAdj} subtext="(Violation/Misdemeanor/Felony)" />
-            <div className="flex justify-center space-x-10 w-4/5">
-                <RadioSection title="Select" options={priorJuvenileOptions} update_fn={setPriorJuvenileFelonyAdj} group="prior-juvenile" />
-            </div>
+            <TwoColumnWrapper>
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Prior Juvenile Delinquency or YO Adjudications" score={PriorJuvenileFelonyAdj} subtext="(Violation/Misdemeanor/Felony)" />
+                    <RadioSectionWrapper>
+                        <RadioSection options={priorJuvenileOptions} update_fn={setPriorJuvenileFelonyAdj} group="prior-juvenile" />
+                    </RadioSectionWrapper>
+                </StackingDiv>
+                <Divider modifier="horizontal" />
+                <StackingDiv>
+                    <SectionHeader mod="half" title="Possession/Use of a Deadly Weapon or Dangerous Instrument" score={useDeadlyWeapon} subtext="" />
+                    <RadioSectionWrapper>
+                        <RadioSection options={deadlyWeaponOptions} update_fn={setUseDeadlyWeapon} group="use-weapon" />
+                    </RadioSectionWrapper>
+                </StackingDiv>
+            </TwoColumnWrapper>
+            <Divider modifier="bottom" />
 
-            <div className="divider divider-neutral"></div> 
-
-            <SectionHeader title="Possession/Use of a Deadly Weapon or Dangerous Instrument" score={useDeadlyWeapon} subtext="" />
-            <div className="flex justify-center space-x-10 w-4/5">
-                <RadioSection title="Select" options={deadlyWeaponOptions} update_fn={setUseDeadlyWeapon} group="use-weapon" />
-            </div>
-
-            <div className="divider divider-accent"></div> 
-
-            <div className="flex flex-col w-4/5">
-                <SectionHeader title="Total Score" score={sumTotal} subtext="8 or more points = Prison" last="true"/>
+            <div className="flex w-4/5">
+                <SectionHeader title="Total Score" score={sumTotal} subtext="8 or more points = Prison" mod="last"/>
             </div>
         </div>
         </>
