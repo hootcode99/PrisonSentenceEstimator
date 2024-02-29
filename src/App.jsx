@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Navbar, SideBarNav } from './components/Navbar'
 
@@ -17,10 +18,12 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
+  const [theme, setTheme] = useState('dark');
+
   return (
-    <div data-theme="dark">
+    <div data-theme={theme}>
       <Navbar />
-      <SideBarNav>
+      <SideBarNav setTheme={setTheme} currTheme={theme}>
         <Routes>
           <Route path='/' element={<HomePage />} /> 
           <Route path='/drugworksheets/ABC_inout' element={<DrugWorksheetABC_InOut />} />

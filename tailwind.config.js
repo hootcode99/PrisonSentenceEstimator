@@ -10,7 +10,15 @@ export default {
   plugins: [require("daisyui")],
 
   daisyui: {
-    themes: ["winter", "dark"],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          "primary-content": "#c7dcff",
+        },
+      },
+      "dark",
+    ],
   },
 
 }
