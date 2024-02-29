@@ -50,14 +50,24 @@ export function SentenceRangeResult(props) {
 
     return (
         <div className="flex h-20 bg-base-300 items-center rounded-box w-full justify-between">
-            <p className="text-3xl mx-5 font-bold">Sent. Range</p>
-            <p className="text-lg mx-5 text-accent">(Straight)</p>
-            <div className="stat-value text-warning mx-5">{straight.low} - {straight.high}</div>
-            <p className="text-lg mx-5 text-accent">(Split)</p>
-            <div className="stat-value text-warning mx-5">{split.low} - {split.high}</div>
-            
-            <p className="text-3xl mx-5 font-bold">Total Score</p>
-            <div className="stat-value text-warning mx-5">{props.score}</div>
+            <div className='flex items-center'>
+                <p className="text-3xl mx-5 font-bold">Sentence Range</p>
+
+                <div className='flex items-center'>            
+                    <div className="stat-value text-warning mx-5">{straight.low} - {straight.high}</div>
+                    <p className="text-lg -ml-2 mr-5 text-accent">(Straight)</p>
+                </div>
+
+                <div className='flex items-center'> 
+                    <div className="stat-value text-warning mx-5">{split.low} - {split.high}</div>
+                    <p className="text-lg -ml-2 mr-5 text-accent">(Split)</p>
+                </div>
+            </div>
+
+            <div className='flex items-center'>
+                <p className="text-3xl mx-5 font-bold">Total Score</p>
+                <div className="stat-value text-warning mx-5">{props.score}</div>
+            </div>
         </div>
     )
 }

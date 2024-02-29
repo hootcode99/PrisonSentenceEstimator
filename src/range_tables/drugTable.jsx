@@ -191,7 +191,7 @@ export function getdrugABTableValue(score) {
       }
     };
 
-  } else if (between(score, 320, 381)) {
+  } else if (between(score, 320, 381) || score > 381) {
     sentence = 
     {
       Straight: {
@@ -418,7 +418,7 @@ export function getdrugCTableValue(score) {
       }
     };
 
-  } else if (between(score, 188, 248)) {
+  } else if (between(score, 188, 248) || score > 248) {
     sentence = 
     {
       Straight: {
@@ -433,7 +433,7 @@ export function getdrugCTableValue(score) {
         high: 24,
       }
     };
-  }
+  } 
 
   return sentence;
 }
