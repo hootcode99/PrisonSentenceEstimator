@@ -1,6 +1,7 @@
-export function SectionHeader(props){
+import { SentenceRangeResult } from "./SentenceRangeResult"
 
-    if (props.mod === "last"){
+export function SectionHeader(props){
+    if (props.mod === "score"){
         let score_style = "stat-value text-success mx-5"
         let subtext_style = "text-lg mx-5 text-base-content"
         if (props.score >= 8) {
@@ -9,12 +10,17 @@ export function SectionHeader(props){
         }
         return (
             <div className="flex h-20 bg-base-300 items-center rounded-box w-full justify-between">
-                <p className="text-3xl mx-5 font-bold">{props.title}</p>
-                <p className={subtext_style}>{props.subtext}</p>
+                <p className="text-3xl mx-5 font-bold">Total Score</p>
+                <p className={subtext_style}>8 or more points = Prison</p>
                 <div className={score_style}>{props.score}</div>
             </div>
         )
-
+    
+    } else if (props.mod === "sentence") {
+        return (
+            <SentenceRangeResult score={props.score} class_flag={props.class_flag} type={props.type}/>
+        )
+    
     } else if (props.mod === "half"){
         return (
             <div className="flex h-20 bg-base-300 items-center rounded-box w-full justify-between">
@@ -23,6 +29,7 @@ export function SectionHeader(props){
                 <div className="stat-value text-info mx-5">{props.score}</div>
             </div>
         )
+
     } else if (props.mod === "uneven"){
         return (
             <div className="flex h-20 bg-base-300 justify-center rounded-box w-full justify-between">
@@ -31,6 +38,7 @@ export function SectionHeader(props){
                 <div className="stat-value text-info mx-5">{props.score}</div>
             </div>
         )
+    
     } else {
         return (
             <div className="flex h-20 mx-5 bg-base-300 items-center rounded-box w-4/5 justify-between">

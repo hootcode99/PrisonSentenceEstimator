@@ -7,10 +7,9 @@ export function Navbar() {
     const [typeDirectory, setTypeDirectory] = useState("")
     const [classDirectory, setClassDirectory] = useState("");
     const [sheetDirectory, setSheetDirectory] = useState("");
-
+    
+    // This useEffect hook will update the page labels at the top based on the current URL
     useEffect(() => {
-        
-
         if (location.pathname.includes('drug')) {
             setTypeDirectory("Drug Offense Worksheets");
         } else if (location.pathname.includes('prop')) {

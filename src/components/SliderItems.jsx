@@ -1,37 +1,124 @@
-export function SliderBar(props) {
+import React, { useState } from 'react';
+import {
+    addFelonyConvictionsABCSent, 
+    priorAdultFelonyConvictionsABCSent,
+    priorAdultFelonyCDConvsABCSent
+} from '../options_data/drugOptionsABC.js';
+import { generateSpans } from '../utils.jsx';
+
+export function DrugSliderBar(props) {
+    const [sliderLiteral, setSliderLiteral] = useState(props.value);
 
     const handleSliderChange = (e) => {
-        props.update_fn(e.target.value);
+        if (props.sentence === "true") {
+            if (props.section === "addFelonyConvictions") {
+                props.update_fn(addFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "priorAdultFelonyConvs") {
+                props.update_fn(priorAdultFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "ClassCD") {
+                props.update_fn(priorAdultFelonyCDConvsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            }    
+        } else {
+            props.update_fn(e.target.value);
+            setSliderLiteral(e.target.value);
+        }
     }
 
-    if (props.column === "true"){
-        return (
-            <div className="flex flex-col mt-5">
-            <input type="range" min='0' max='5' value={props.value} className="range w-full" step="1" onChange={handleSliderChange}/>
+    return (
+        <div className={props.arrStyle}>
+            <input 
+            type="range" 
+            min={props.min} 
+            max={props.max} 
+            step={props.step} 
+            value={sliderLiteral}
+            className="range range-secondary w-full" 
+            onChange={handleSliderChange}
+            />
             <div className="w-full flex justify-between text-lg px-2">
-                <span>0</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5+</span>
+                {generateSpans(props.min, props.max, props.step)}
             </div>
         </div>
-        )
-    } else {
+    )
+}
 
-        return (
-            <div className="flex flex-col w-4/5 mt-5">
-            <input type="range" min='0' max='5' value={props.value} className="range w-full" step="1" onChange={handleSliderChange}/>
+export function PropertySliderBar(props) {
+    const [sliderLiteral, setSliderLiteral] = useState(props.value);
+
+    const handleSliderChange = (e) => {
+        if (props.sentence === "true") {
+            if (props.section === "addFelonyConvictions") {
+                props.update_fn(addFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "priorAdultFelonyConvs") {
+                props.update_fn(priorAdultFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "ClassCD") {
+                props.update_fn(priorAdultFelonyCDConvs[e.target.value]);
+                setSliderLiteral(e.target.value);
+            }    
+        } else {
+            props.update_fn(e.target.value);
+            setSliderLiteral(e.target.value);
+        }
+    }
+
+    return (
+        <div className={props.arrStyle}>
+            <input 
+            type="range" 
+            min={props.min} 
+            max={props.max} 
+            step={props.step} 
+            value={sliderLiteral}
+            className="range range-secondary w-full" 
+            onChange={handleSliderChange}
+            />
             <div className="w-full flex justify-between text-lg px-2">
-                <span>0</span>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5+</span>
+                {generateSpans(props.min, props.max, props.step)}
             </div>
         </div>
-        )
+    )
+}
+
+export function PersonalSliderBar(props) {
+    const [sliderLiteral, setSliderLiteral] = useState(props.value);
+
+    const handleSliderChange = (e) => {
+        if (props.sentence === "true") {
+            if (props.section === "addFelonyConvictions") {
+                props.update_fn(addFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "priorAdultFelonyConvs") {
+                props.update_fn(priorAdultFelonyConvictionsABCSent[e.target.value]);
+                setSliderLiteral(e.target.value);
+            } else if (props.section === "ClassCD") {
+                props.update_fn(priorAdultFelonyCDConvs[e.target.value]);
+                setSliderLiteral(e.target.value);
+            }    
+        } else {
+            props.update_fn(e.target.value);
+            setSliderLiteral(e.target.value);
+        }
     }
+
+    return (
+        <div className={props.arrStyle}>
+            <input 
+            type="range" 
+            min={props.min} 
+            max={props.max} 
+            step={props.step} 
+            value={sliderLiteral}
+            className="range range-secondary w-full" 
+            onChange={handleSliderChange}
+            />
+            <div className="w-full flex justify-between text-lg px-2">
+                {generateSpans(props.min, props.max, props.step)}
+            </div>
+        </div>
+    )
 }
