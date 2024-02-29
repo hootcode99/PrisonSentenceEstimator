@@ -11,4 +11,4 @@ I will be leveraging React + Vite for development. I am leveraging TailwindCSS +
 
 ## Live Site
 The working version of the site is live. My pushes to the main branch go into production through Netlify.
-[Link](alworksheets.netlify.app)
+[Link](https://alworksheets.netlify.app)
