@@ -12,3 +12,16 @@ I will be leveraging React + Vite for development. I am leveraging TailwindCSS +
 ## Live Site
 The working version of the site is live. My pushes to the main branch go into production through Netlify.
 [Link](https://alworksheets.netlify.app)
+
+## Samples
+
+<p float="left">
+  <img src="public/actual_inout.png" width="300" />
+  <img src="public/demo_image_inout.png" width="300" /> 
+</p>
+
+
+<p float="left">
+  <img src="public/actual_sentlen.png" width="300" />
+  <img src="public/demo_image_sentlen.png" width="300" /> 
+</p>
