@@ -15,34 +15,9 @@ import PersonalWorksheet_SentenceLength from './pages/PersonalWorksheet_Sentence
 import HomePage from './pages/HomePage'
 
 import Footer from './components/Footer'
-import './index.css'
 
 function App() {
-  const [theme, setTheme] = useState('dark');
-
-  return (
-    <div data-theme={theme}>
-      <Navbar />
-      <SideBarNav setTheme={setTheme} currTheme={theme}>
-        <Routes>
-          <Route path='/' element={<HomePage />} /> 
-          <Route path='/drugworksheets/ABC_inout' element={<DrugWorksheetABC_InOut />} />
-          <Route path='/drugworksheets/ABC_sentencelength' element={<DrugWorksheetABC_SentenceLength />} />
-          <Route path='/drugworksheets/D_inout' element={<DrugWorksheetD_InOut />} />
-          <Route path='/drugworksheets/D_sentencelength' element={<DrugWorksheetD_SentenceLength />} />
-
-          <Route path='/propertyworksheets/ABC_inout' element={<PropertyWorksheetABC_InOut />} />
-          <Route path='/propertyworksheets/ABC_sentencelength' element={<PropertyWorksheetABC_SentenceLength />} />
-          <Route path='/propertyworksheets/D_InOut' element={<PropertyWorksheetD_InOut />} />
-          <Route path='/propertyworksheets/D_sentencelength' element={<PropertyWorksheetD_SentenceLength />} />
-
-          <Route path='/personalworksheets/inout' element={<PersonalWorksheet_InOut />} />
-          <Route path='/personalworksheets/sentencelength' element={<PersonalWorksheet_SentenceLength />} />
-        </Routes>
-      </SideBarNav>
-      <Footer />
-    </div>
-  )
+  return (<></>);
 }
 
 export default App
