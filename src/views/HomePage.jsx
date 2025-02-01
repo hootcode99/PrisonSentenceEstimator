@@ -1,4 +1,4 @@
-export default function DrugWorksheetABC_InOut() {
+export default function Home() {
     return (
         <div className="hero min-h-screen" style={{backgroundImage: 'url(https://equalizingjustice.com/wp-content/uploads/2022/07/Footer-contact-bg.webp)'}}>
         <div className="hero-overlay bg-opacity-65"></div>
