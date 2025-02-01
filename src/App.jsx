@@ -15,7 +15,7 @@ import PersonalWorksheet_SentenceLength from './pages/PersonalWorksheet_Sentence
 import HomePage from './pages/HomePage'
 
 import Footer from './components/Footer'
-import './App.css'
+import './index.css'
 
 function App() {
   const [theme, setTheme] = useState('dark');
