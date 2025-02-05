@@ -6,16 +6,12 @@ export default function ThemeController() {
     const theme = useSelector((state) => state.global.theme);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-      document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
-
     const handleThemeChange = () => {
         dispatch(toggleTheme());
     };
 
     return (
-        <label className="flex cursor-pointer gap-2">
+        <label className="flex cursor-pointer gap-2 justify-center">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
