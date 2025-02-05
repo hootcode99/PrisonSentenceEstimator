@@ -1,0 +1,1 @@
+export const welcomeMessage = 'This is a tool to simplify your worksheet calculations for defendants facing sentencing. You simply select the applicable options and the tool has the info to calculate the score or sentence length for you';
