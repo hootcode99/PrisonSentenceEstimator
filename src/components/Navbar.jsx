@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import routes from '../routes/routes';
 import ThemeController from './ThemeController';
 
-export default function Navbar({ children }) {
-    const currentRoute = routes.find(route => route.path === window.location.pathname)?.title || 'Home';
+const Navbar = ({ children }) => {
+    let currentRoute = routes.find(route => route.path === window.location.pathname)?.title || 'Home';
 
     return (
         <div className="drawer">
@@ -14,7 +14,7 @@ export default function Navbar({ children }) {
                 <div className="breadcrumbs text-xl flex justify-start space-x-4">
                     <label htmlFor="my-drawer" className="btn btn-primary drawer-button text-lg">Navigate</label>
                     <ul className="flex space-x-4">
-                        <li><a>Home</a></li>
+                        <li>Home</li>
                         <li>{currentRoute}</li>
                     </ul>
                 </div>
@@ -33,5 +33,8 @@ export default function Navbar({ children }) {
                 </ul>
             </div>
         </div>
-    )
-}
+    
+    );
+};
+
+export default Navbar;
