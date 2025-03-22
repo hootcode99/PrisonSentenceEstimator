@@ -19,17 +19,14 @@ export const classOptionsABCScore =  {
         {text: "A/S/C Poss of Marihuana 1st §13A-12-213(a)(1)", value: 2}]
 };
 
-export const misdemeanorOptionsABCScore = [
-{text: "0-1", value: 0},
-{text: "2-5", value: 1},
-{text: "6-9", value: 2},
-{text: "10+", value: 3},
-];
-
-export const priorIncarcerationOptionsABCScore = [{text: "None or <1 year", value: 0}, {text: "1 year or more", value: 3}];
-export const priorParoleViolationOptionsABCScore = [{text: "None", value: 0}, {text: "1 or more", value: 1}];
-export const priorJuvenileOptionsABCScore = [{text: "None", value: 0}, {text: "1-2", value: 1}, {text: "3-4", value: 2}, {text: "5+", value: 3}];
-export const deadlyWeaponOptionsABCScore = [{text: "No", value: 0}, {text: "Yes", value: 2}];
+export const ABCInOutSelectOptions = {
+    valuesAdultFelonyConv: [{text: "0", value: 0}, {text: "1", value: 2}, {text: "2", value: 3}, {text: "3", value: 5}, {text: "4", value: 6}, {text: "5+", value: 7}],
+    valuesAdultMisdemeanorConv: [{text: "0-1", value: 0},{text: "2-5", value: 1},{text: "6-9", value: 2}, {text: "10+", value: 3}],
+    valuesPriorIncarceration: [{text: "None or <1 year", value: 0}, {text: "1 year or more", value: 3}],
+    valuesFelonyProbation: [{text: "None", value: 0}, {text: "1 or more", value: 1}],
+    valuesJuvenileDelinq: [{text: "None", value: 0}, {text: "1-2", value: 1}, {text: "3-4", value: 2}, {text: "5+", value: 3}],
+    valuesDeadlyWeapon: [{text: "No", value: 0}, {text: "Yes", value: 2}],
+};
 
 //-------------------------------------------------------------------------------- SENTENCE LENGTH OPTIONS
 export const classOptionsABCSent = {

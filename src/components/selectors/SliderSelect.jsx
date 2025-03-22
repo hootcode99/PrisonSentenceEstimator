@@ -1,41 +1,33 @@
 import React from 'react'
 
-const SliderSelect = ({ title, options, onChange }) => {
-    const {start, stop, step, value} = options;
+import Card from '../Card';
 
-    // generate arrays to use to render the spans
-    const range = Array.from(
-        { length: Math.floor((stop - start) / step) + 1 },
-        (_, i) => start + i * step
-    );
+const SliderSelect = ({ data }) => {
+    const {title, options, value, setter} = data;
+    const length = options.length;
 
     const onChangeHandler = (e) => {
-        onChange(e.target.value);
+        setter(e.target.value);
+        console.log(e.target.value); 
     }
 
     return (
-        <div className="card card-border bg-base-100 w-96">
-            <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                    <div className="w-full max-w-xs">
-                        <input type="range" min={start} max={stop} value={value} className="range" step={step} onChange={onChangeHandler}/>
-                        <div className="flex justify-between px-2.5 mt-2 text-xs">
-                        {range.map((_, index) => (
-                                <span key={index}>|</span>
-                            ))}
-        
-                        </div>
-                        <div className="flex justify-between px-2.5 mt-2 text-xs">
-                            {range.map((val, index) => (
-                                <span key={index}>{val}</span>
-                            ))}
-                        </div>
-                    </div>
+        <Card title={title}>
+            <div className="w-full max-w-xs">
+                <input type="range" className="range range-accent" value={value} min={0} max={length} onChange={onChangeHandler}/>
+                <div className="flex justify-between px-2.5 mt-2 text-xs">
+                {Array.from({ length: length}).map((_, index) => (
+                    <span key={index}>|</span>
+                ))}
+
+                </div>
+                <div className="flex justify-between px-2.5 mt-2 text-xs">
+                {options.map((option, index) => (
+                        <span key={index}>{option.text}</span>
+                ))}
                 </div>
             </div>
-        </div>
+        </Card>
     )
 };
 
