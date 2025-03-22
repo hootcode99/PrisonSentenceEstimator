@@ -9,7 +9,7 @@ const SliderSelect = ({ data }) => {
     const onChangeHandler = (e) => {
         setter(e.target.value);
         console.log(e.target.value); 
-    }
+    };
 
     return (
         <Card title={title}>
