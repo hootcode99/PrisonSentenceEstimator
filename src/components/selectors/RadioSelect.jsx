@@ -17,13 +17,12 @@ const RadioSelect = ({ data }) => {
                 <label 
                     key={index} 
                     className="flex flex-col items-center space-y-1"
-                >
-                    
+                >   
                     <input
                         key={index} 
                         type="radio" 
                         name="radio-6" 
-                        className="radio radio-accent" 
+                        className="radio radio-accent mb-1" 
                         value={option.value} 
                         onChange={onChangeHandler}/>
                         {option.text}

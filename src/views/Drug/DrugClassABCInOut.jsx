@@ -16,7 +16,6 @@ const DrugClassABCInOutView = () => {
 
     return (
         <div>
-            <h1>Drug Class ABC - In/Out</h1>
             <ResponsiveGrid>
                 <RadioSelect data={dataAdultFelonyConv} />
                 <RadioSelect data={dataAdultMisdemeanorConv} />
