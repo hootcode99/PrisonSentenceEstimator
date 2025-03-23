@@ -3,6 +3,7 @@ import { DrugABCInOutProvider, DrugABCInOutContext } from '../../context/drug/Dr
 import SliderSelect from '../../components/selectors/SliderSelect';
 import RadioSelect from '../../components/selectors/RadioSelect';
 import ResponsiveGrid from '../../components/ResponsiveGrid';
+import ScoreSection from '../../components/ScoreSection';
 
 const DrugClassABCInOutView = () => {
     const { 
@@ -24,7 +25,10 @@ const DrugClassABCInOutView = () => {
                 <RadioSelect data={dataJuvenileDelinq} />
                 <RadioSelect data={dataDeadlyWeapon} />
             </ResponsiveGrid>
+            <div className="divider"/>
+            <ScoreSection score={0}/>
         </div>
+        
     );
 };
 

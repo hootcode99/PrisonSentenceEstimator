@@ -12,7 +12,7 @@ const RadioSelect = ({ data }) => {
     }
 
     return (
-        <Card title={title}>
+        <Card title={title} value={value}>
             {options.map((option, index) => (
                 <label 
                     key={index} 
